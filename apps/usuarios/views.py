@@ -3,7 +3,7 @@ from django.contrib import auth
 from django.contrib import messages
 from django.contrib.auth.models import User
 
-from usuarios.forms import CadastroForm, LoginForm
+from apps.usuarios.forms import CadastroForm, LoginForm
 
 
 def login(request):
