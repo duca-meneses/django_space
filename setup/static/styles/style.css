@@ -338,7 +338,7 @@ table {
 }
 
 .rodape {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     background-color: #04244F;
