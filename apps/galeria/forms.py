@@ -6,11 +6,10 @@ from apps.galeria.models import Fotografia
 class FotografiaForms(forms.ModelForm):
     class Meta:
         model = Fotografia
-        exclude = ['publicada',]
+        exclude = ['publicada', 'usuario']
         labels = {
             'descricao': 'Descrição',
             'data_fotografia': 'Data de registro',
-            'usuario': 'Usuário',
         }
 
         widgets = {
@@ -26,6 +25,5 @@ class FotografiaForms(forms.ModelForm):
                     'class': 'form-control'
                 }
             ),
-            'usuario': forms.Select(attrs={'class': 'form-control'}),
         }
         

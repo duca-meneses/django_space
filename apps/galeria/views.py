@@ -45,9 +45,15 @@ def nova_imagem(request):
     if request.method == 'POST':
         form = FotografiaForms(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            nova_fotografia = form.save(commit=False)
+            nova_fotografia.usuario = request.user
+            nova_fotografia.save()
+            
             messages.success(request, 'Nova fotografia cadastrada')
             return redirect('index')
+        else: 
+            messages.error(request, 'Erro ao salvar, tente novamente')
+            form = FotografiaForms()
     
     return render(request, 'galeria/nova_imagem.html', {'form': form})
 
